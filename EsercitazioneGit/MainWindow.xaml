@@ -7,6 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox HorizontalAlignment="Left" x:Name ="TitoloLibro" Height="38" Margin="31,24,0,0" TextWrapping="Wrap" Text="Titolo Libro" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="AutoreLibro" Height="38" Margin="141,24,0,0" TextWrapping="Wrap" Text="Autore Libro" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="EditoreLibro" Height="38" Margin="251,24,0,0" TextWrapping="Wrap" Text="Editore Libro" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="AnnoLibro" Height="38" Margin="361,24,0,0" TextWrapping="Wrap" Text="Anno di Pubblicazione" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="PagineLibro" Height="38" Margin="471,24,0,0" TextWrapping="Wrap" Text="Numero di Pagine" VerticalAlignment="Top" Width="105"/>
+        <Button Content="Crea Libro e Aggiungilo alla Biblioteca" x:Name="Libro" HorizontalAlignment="Left" Height="38" Margin="581,24,0,0" VerticalAlignment="Top" Width="219"/>
+        <Button Content="toString" x:Name="Tostring" HorizontalAlignment="Left" Height="32" Margin="31,67,0,0" VerticalAlignment="Top" Width="105"/>
+        <Button Content="Reading Time" x:Name="Reading" HorizontalAlignment="Left" Height="32" Margin="141,67,0,0" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="Nome" Height="38" Margin="31,179,0,0" TextWrapping="Wrap" Text="Nome Biblioteca" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="Indirizzo" Height="38" Margin="141,179,0,0" TextWrapping="Wrap" Text="Indirizzo Biblioteca" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="Apertura" Height="38" Margin="251,179,0,0" TextWrapping="Wrap" Text="Orario Apertura" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="Chiusura" Height="38" Margin="361,179,0,0" TextWrapping="Wrap" Text="Orario Chiusura" VerticalAlignment="Top" Width="105"/>
+        <Button Content="Crea Biblioteca" x:Name="CreazioneBiblioteca" HorizontalAlignment="Left" Height="38" Margin="472,179,0,0" VerticalAlignment="Top" Width="218"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="TitoloRicerca" Height="38" Margin="31,249,0,0" TextWrapping="Wrap" Text="Titolo Da Cercare" VerticalAlignment="Top" Width="105"/>
+        <Button Content="Cerca" x:Name="CercaTitolo" HorizontalAlignment="Left" Height="32" Margin="141,252,0,0" VerticalAlignment="Top" Width="105"/>
+        <TextBox HorizontalAlignment="Left" x:Name ="AutoreRicerca" Height="38" Margin="304,249,0,0" TextWrapping="Wrap" Text="Autore Da Cercare" VerticalAlignment="Top" Width="104"/>
+        <Button Content="Cerca" x:Name="CercaAutore" HorizontalAlignment="Left" Height="32" Margin="418,252,0,0" VerticalAlignment="Top" Width="106"/>
+        <Button Content="Numero Libri" x:Name="NumeroLibri" HorizontalAlignment="Left" Height="32" Margin="638,252,0,0" VerticalAlignment="Top" Width="106"/>
+
 
     </Grid>
 </Window>

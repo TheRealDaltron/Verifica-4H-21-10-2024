@@ -1,0 +1,71 @@
+[1mdiff --git a/EsercitazioneGit/Biblioteca.cs b/EsercitazioneGit/Biblioteca.cs[m
+[1mindex 374ac8a..22e158f 100644[m
+[1m--- a/EsercitazioneGit/Biblioteca.cs[m
+[1m+++ b/EsercitazioneGit/Biblioteca.cs[m
+[36m@@ -1,8 +1,10 @@[m
+ ﻿using System;[m
+ using System.Collections.Generic;[m
+ using System.Linq;[m
+[32m+[m[32musing System.Security.AccessControl;[m
+ using System.Text;[m
+ using System.Threading.Tasks;[m
+[32m+[m[32musing System.Windows.Media.Animation;[m
+ [m
+ namespace EsercitazioneGit[m
+ {[m
+[36m@@ -20,6 +22,55 @@[m [mnamespace EsercitazioneGit[m
+             this.chiusura = _chiusura;[m
+         }[m
+ [m
+[32m+[m[32m        private List<Libro> lista = new List<Libro>();[m
+ [m
+[32m+[m[32m        public void AddLibro(Libro libro)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            lista.Add(libro);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        public Libro RicercaLibro(string titolo)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (lista.Count == 0)[m
+[32m+[m[32m                throw new Exception("Lista dei libri vuota");[m
+[32m+[m
+[32m+[m[32m            foreach(Libro libro in lista)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                if(libro.titolo == titolo)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    return libro;[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            return new Exception("Libro non trovato");[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        public List<Libro> RicercaAutore(string autore)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            if (lista.Count == 0)[m
+[32m+[m[32m                throw new Exception("Lista dei libri vuota");[m
+[32m+[m
+[32m+[m[32m            List<Libro> list = new List<Libro>();[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            foreach(Libro libro in lista)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                if(libro.autore == autore)[m
+[32m+[m[32m                {[m
+[32m+[m[32m                    list.Add(libro);[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            if (list.Count == 0)[m
+[32m+[m[32m                return new Exception("Autore non trovato");[m
+[32m+[m
+[32m+[m
+[32m+[m[32m            return list;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        public int LibriPresenti()[m
+[32m+[m[32m        {[m
+[32m+[m[32m            return lista.Count;[m
+[32m+[m[32m        }[m
+     }[m
+ }[m
