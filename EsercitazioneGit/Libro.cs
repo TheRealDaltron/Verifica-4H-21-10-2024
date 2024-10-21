@@ -25,7 +25,24 @@ namespace EsercitazioneGit
             Pagine = _pag;
         }
 
+        public string toString(Libro libro)
+        {
+            return $"Il libro è {libro.titolo} scritto da {libro.autore} di {libro.Pagine} pagine, pubblicato da {libro.editore} nel {libro.Anno}";
+        }
 
+        public string readingTime(Libro libro)
+        {
+            if (libro.Pagine < 100) 
+            {
+                return "1h";
+            } else if (libro.Pagine >= 100 && libro.Pagine <= 200)
+            {
+                return "2h";
+            } else
+            {
+                return ">2h";
+            }
+        }
 
     }
 }
