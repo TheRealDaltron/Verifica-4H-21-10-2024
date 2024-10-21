@@ -35,8 +35,9 @@ namespace EsercitazioneGit
                     int st;
                     if(int.TryParse(AnnoLibro.Text, out st) && int.TryParse(PagineLibro.Text, out st))
                     {
-                        Libro lib = new Libro(TitoloLibro.Text, AutoreLibro.Text, EditoreLibro.Text, int.Parse(AnnoLibro.Text), int.Parse(PagineLibro.Text));
+                        Libro lib = new Libro(AutoreLibro.Text, TitoloLibro.Text, EditoreLibro.Text, int.Parse(AnnoLibro.Text), int.Parse(PagineLibro.Text));
                         biblioteca.AddLibro(lib);
+                        MessageBox.Show("Libro Creato");
                     } else
                     {
                         MessageBox.Show("Anno o Pagine non corretti");
@@ -55,8 +56,8 @@ namespace EsercitazioneGit
                     int st;
                     if(int.TryParse(AnnoLibro.Text, out st) && int.TryParse(PagineLibro.Text, out st))
                     {
-                        Libro lib = new Libro(TitoloLibro.Text, AutoreLibro.Text, EditoreLibro.Text, int.Parse(AnnoLibro.Text), int.Parse(PagineLibro.Text));
-                        string messaggio = Libro.toString(lib);
+                        Libro lib = new Libro(AutoreLibro.Text, TitoloLibro.Text, EditoreLibro.Text, int.Parse(AnnoLibro.Text), int.Parse(PagineLibro.Text));
+                        string messaggio = lib.toString(lib);
                         MessageBox.Show(messaggio);
                     } else
                       {
@@ -75,8 +76,8 @@ namespace EsercitazioneGit
                 int st;
                 if (int.TryParse(AnnoLibro.Text, out st) && int.TryParse(PagineLibro.Text, out st))
                 {
-                    Libro lib = new Libro(TitoloLibro.Text, AutoreLibro.Text, EditoreLibro.Text, int.Parse(AnnoLibro.Text), int.Parse(PagineLibro.Text));
-                    string messaggio = Libro.readingTime(lib);
+                    Libro lib = new Libro(AutoreLibro.Text , TitoloLibro.Text, EditoreLibro.Text, int.Parse(AnnoLibro.Text), int.Parse(PagineLibro.Text));
+                    string messaggio = lib.readingTime(lib);
                     MessageBox.Show(messaggio);
                 }
             } else
@@ -106,7 +107,7 @@ namespace EsercitazioneGit
             {
                 if (TitoloRicerca.Text != "")
                 {
-                    Libro lb = biblioteca.CercaTitolo();
+                    Libro lb = biblioteca.RicercaLibro(TitoloRicerca.Text);
 
                     if (lb != null) 
                     {
@@ -129,7 +130,7 @@ namespace EsercitazioneGit
             {
                 if (AutoreRicerca.Text != "")
                 {
-                    List<Libro> ls = biblioteca.CercaAutore();
+                    List<Libro> ls = biblioteca.RicercaAutore(AutoreRicerca.Text);
 
                     if (ls.Count != 0)
                     {
@@ -149,9 +150,9 @@ namespace EsercitazioneGit
 
         private void NumeroLibri_Click(object sender, RoutedEventArgs e)
         {
-            if (!isBiblioteca == true)
+            if (isBiblioteca == true)
             {
-                MessageBox.Show(biblioteca.NumeroLibri());
+                MessageBox.Show(biblioteca.LibriPresenti().ToString());
             } else
             {
                 MessageBox.Show("Biblioteca Non Creata");

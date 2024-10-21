@@ -42,7 +42,7 @@ namespace EsercitazioneGit
                 }
             }
 
-            return new Exception("Libro non trovato");
+            throw new Exception("Libro non trovato");
         }
 
         public List<Libro> RicercaAutore(string autore)
@@ -62,7 +62,7 @@ namespace EsercitazioneGit
             }
 
             if (list.Count == 0)
-                return new Exception("Autore non trovato");
+                throw new Exception("Autore non trovato");
 
 
             return list;
